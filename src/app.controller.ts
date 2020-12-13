@@ -6,8 +6,10 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  getHello(@Res() res): string {
+    return res.status(200).send({
+      message: this.appService.getHello(),
+    });
   }
 
   @Get('/redirect')
