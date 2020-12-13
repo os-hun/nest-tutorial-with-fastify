@@ -1,15 +1,12 @@
 import { Controller, Get, Res } from '@nestjs/common';
-import { AppService } from './app.service';
+import { MainController } from './main.controller';
 
 @Controller()
-export class AppController {
-  constructor(private readonly appService: AppService) {}
-
+export class AppController extends MainController {
   @Get()
-  getHello(@Res() res): string {
-    return res.status(200).send({
-      message: this.appService.getHello(),
-    });
+  getHello(@Res() res) {
+    this.json.message = this.appService.getHello();
+    return res.status(200).send(this.json);
   }
 
   @Get('/redirect')
