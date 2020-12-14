@@ -1,7 +1,7 @@
 import { Controller } from '@nestjs/common';
 import { AppService } from './app.service';
 
-type IJson = {
+type Json = {
   message?: string;
   payload: any;
   errors?: string[];
@@ -10,7 +10,7 @@ type IJson = {
 @Controller()
 export class MainController {
   constructor(public readonly appService: AppService) {}
-  public json: IJson = {
+  public json: Json = {
     message: '',
     payload: {},
     errors: [],
