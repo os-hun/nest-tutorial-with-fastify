@@ -7,6 +7,6 @@ export class AppService {
   }
 
   getHelloWithName(name: string): string {
-		return 'Hello World ' + name + ' !'; 
+    return 'Hello World ' + name + '!';
   }
 }
